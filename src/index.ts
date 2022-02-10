@@ -1,1 +1,2 @@
-console.info("hey"); // nice, now what?
+console.info("hey"); 
+```the comment shouldn't be there
