@@ -1,7 +1,7 @@
 {
   "name": "terriblebot",
   "version": "0.0.1",
-  "description": "",
+  "description": "A terrible bot made for the sake of exploration",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
