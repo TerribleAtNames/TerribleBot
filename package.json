@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "testLog": "echo \"This is a test\""
+    "testLog": "echo \"This is a test\"",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
