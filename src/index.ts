@@ -1,6 +1,6 @@
 import { Client, Intents } from "discord.js"; 
-import config from "dotenv";
-config.config();
+import "dotenv/config"
+
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS]
 });
