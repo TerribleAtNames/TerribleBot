@@ -1,23 +1,22 @@
 /* eslint-disable no-console */
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v9";
-import { token } from "./config.json";
+import "dotenv/config";
 import { readdirSync } from "fs";
 
 const commands = [];
 const commandFiles = readdirSync("./commands").filter(file => file.endsWith(".js"));
 
 // Place your client and guild ids here
-const clientId = "829380069109399572";
-const guildId = "946070653314957372";
+const clientId = "946070653314957372";
+const guildId = "829380069109399572";
 
 for (const file of commandFiles) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const command = require(`./commands/${file}`);
-    commands.push(command.data.toJSON());
+    const command = await import(`./commands/${file}`);
+    commands.push(command.default.data.toJSON());
 }
 
-const rest = new REST({ version: "9" }).setToken(token);
+const rest = new REST({ version: "9" }).setToken(process.env.TOKEN);
 
 (async () => {
     try {
