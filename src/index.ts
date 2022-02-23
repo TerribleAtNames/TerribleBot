@@ -6,7 +6,7 @@ const client = new Client({
 });
 const commands: Collection<string, {name: string, execute: (interaction: CommandInteraction) => void}> = new Collection();
 (async () => {
-    for await (const i of readdirSync("./commands")) {
+    for await (const i of readdirSync("../commands")) {
         const file = await import(`./commands/${i}`);
         commands.set(file.default.name, file.default);
     }
