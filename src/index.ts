@@ -18,6 +18,7 @@ const commands: Collection<string, Command> = new Collection();
         commands.set(file.data.name, file);
     }
 
+
     client.on("interactionCreate", async interaction => {
         interaction.isCommand() ? commands.get(interaction.commandName)?.execute(interaction) : null;
     });
