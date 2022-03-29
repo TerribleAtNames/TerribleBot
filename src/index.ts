@@ -1,6 +1,5 @@
 import { Client, Collection, Intents, CommandInteraction } from "discord.js";
 import { readdirSync } from "fs";
-import "dotenv/config";
 import { SlashCommandBuilder } from "@discordjs/builders";
 
 declare interface Command {
